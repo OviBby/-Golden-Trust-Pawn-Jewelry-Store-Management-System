@@ -1,0 +1,129 @@
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="itemInformation" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c24909b4-574a-48f3-8b15-434a462dee93">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JewelryShop"/>
+	<query language="SQL"><![CDATA[ SELECT * FROM  JewelryItem]]></query>
+	<field name="item_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="item_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="item_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="JewelryItem"/>
+	</field>
+	<field name="description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="description"/>
+		<property name="com.jaspersoft.studio.field.label" value="description"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="JewelryItem"/>
+	</field>
+	<field name="metal_type" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="metal_type"/>
+		<property name="com.jaspersoft.studio.field.label" value="metal_type"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="JewelryItem"/>
+	</field>
+	<field name="weight_grams" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="weight_grams"/>
+		<property name="com.jaspersoft.studio.field.label" value="weight_grams"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="JewelryItem"/>
+	</field>
+	<field name="purity" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="purity"/>
+		<property name="com.jaspersoft.studio.field.label" value="purity"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="JewelryItem"/>
+	</field>
+	<field name="price" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="price"/>
+		<property name="com.jaspersoft.studio.field.label" value="price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="JewelryItem"/>
+	</field>
+	<field name="added_date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="added_date"/>
+		<property name="com.jaspersoft.studio.field.label" value="added_date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="JewelryItem"/>
+	</field>
+	<field name="current_stock_status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="current_stock_status"/>
+		<property name="com.jaspersoft.studio.field.label" value="current_stock_status"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="JewelryItem"/>
+	</field>
+	<field name="qty" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="qty"/>
+		<property name="com.jaspersoft.studio.field.label" value="qty"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="JewelryItem"/>
+	</field>
+	<field name="unit_price" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="unit_price"/>
+		<property name="com.jaspersoft.studio.field.label" value="unit_price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="JewelryItem"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="66" splitType="Stretch">
+		<element kind="rectangle" uuid="b8fdcf15-26fc-475c-abc7-11bef412d29d" x="0" y="-10" width="552" height="71" backcolor="#A7D4AF"/>
+		<element kind="staticText" uuid="a42f0b20-f58e-4bd2-a197-ab6f2773bce5" x="110" y="0" width="398" height="30" forecolor="#014017" fontName="Baskerville Old Face" fontSize="22.0" bold="true" italic="true">
+			<text><![CDATA[W. P. RANASIHA (PVT) LTD ]]></text>
+		</element>
+		<element kind="staticText" uuid="fe34133a-9eeb-413c-aa86-b220f5c22173" x="180" y="31" width="262" height="30" forecolor="#025C3C" fontName="Serif" fontSize="22.0" bold="false">
+			<text><![CDATA[Stock Information ]]></text>
+		</element>
+	</title>
+	<pageHeader height="4" splitType="Stretch"/>
+	<columnHeader height="40" splitType="Stretch">
+		<element kind="rectangle" uuid="8a2335e9-5f1b-4db8-848c-50214ccaa46e" x="0" y="0" width="552" height="31" backcolor="#6ECC74"/>
+		<element kind="staticText" uuid="3fcb4cb2-68fc-4210-aff6-1f0e6673eb04" x="10" y="6" width="50" height="30" hTextAlign="Center">
+			<text><![CDATA[Item ID]]></text>
+		</element>
+		<element kind="staticText" uuid="8d22609f-a9d7-4fa8-8119-3da4c4adb5d9" x="78" y="6" width="70" height="30" hTextAlign="Center">
+			<text><![CDATA[Item Name]]></text>
+		</element>
+		<element kind="staticText" uuid="916a760d-fc3d-4e3b-91de-ce66eb2bd865" x="172" y="6" width="61" height="30" hTextAlign="Center">
+			<text><![CDATA[MetalType]]></text>
+		</element>
+		<element kind="staticText" uuid="a8346a1e-c363-4a88-96dd-4f79c0db00f8" x="243" y="7" width="68" height="30" hTextAlign="Center">
+			<text><![CDATA[Weight (mg)]]></text>
+		</element>
+		<element kind="staticText" uuid="81f8939d-4cbb-4fb4-b158-62f5cfa476f1" x="322" y="7" width="40" height="30" hTextAlign="Center">
+			<text><![CDATA[Purity ]]></text>
+		</element>
+		<element kind="staticText" uuid="c3c04573-35e3-4555-90ce-4c17ef6fa1af" x="375" y="8" width="30" height="30" hTextAlign="Center">
+			<text><![CDATA[QTY]]></text>
+		</element>
+		<element kind="staticText" uuid="6a10e266-b941-4dd4-b52f-ca6ca1a69325" x="484" y="9" width="50" height="30" hTextAlign="Center">
+			<text><![CDATA[Price]]></text>
+		</element>
+		<element kind="staticText" uuid="9cc79d18-2e33-4e30-abf0-e34a5e78a5da" x="412" y="8" width="62" height="30" hTextAlign="Center">
+			<text><![CDATA[Uni Price]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="45" splitType="Stretch">
+			<element kind="textField" uuid="88d03db9-a919-4a84-aa72-0e91d2f2b7bd" x="2" y="10" width="48" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{item_id}]]></expression>
+			</element>
+			<element kind="textField" uuid="437df92d-42da-45e2-8c66-4be08d8a637d" x="50" y="10" width="124" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{description}]]></expression>
+			</element>
+			<element kind="textField" uuid="834bf700-dc8b-411b-8b96-1d9c9687adda" x="182" y="10" width="56" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{metal_type}]]></expression>
+			</element>
+			<element kind="textField" uuid="5b34a88f-6166-44e1-9864-724be7f83f84" x="259" y="10" width="44" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{weight_grams}]]></expression>
+			</element>
+			<element kind="textField" uuid="22beaa7a-9901-47a0-8538-a195ba875530" x="320" y="10" width="38" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{purity}]]></expression>
+			</element>
+			<element kind="textField" uuid="25958ff1-67c7-482b-bca3-7063bf6bcd35" x="371" y="10" width="42" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{qty}]]></expression>
+			</element>
+			<element kind="textField" uuid="30e8a481-1cad-420a-af18-4d5cfa06bf42" x="418" y="10" width="48" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{unit_price}]]></expression>
+			</element>
+			<element kind="textField" uuid="17054cf2-1271-4e08-9501-b7f2795da2b7" x="470" y="10" width="82" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{price}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch">
+		<element kind="staticText" uuid="a2ea435b-c273-4698-af0f-682d18abf1fd" x="208" y="12" width="142" height="30" forecolor="#0B3605" backcolor="#254D35" fontSize="13.0" bold="true">
+			<text><![CDATA[......ALL Item Stock .....]]></text>
+		</element>
+	</pageFooter>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

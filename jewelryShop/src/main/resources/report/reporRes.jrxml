@@ -1,0 +1,199 @@
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="PawnLoanReceipt" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="81c2ce82-f4a7-4997-9e75-a3b8a0261ce8">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JewelryShop"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="receipt_id" class="java.lang.String"/>
+	<parameter name="customer_name" class="java.lang.String"/>
+	<parameter name="nic_number" class="java.lang.String"/>
+	<parameter name="phone_number" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="total_weight" class="java.lang.Double"/>
+	<parameter name="total_amount" class="java.lang.Double"/>
+	<parameter name="stamp_fees" class="java.lang.Double"/>
+	<parameter name="current_interest" class="java.lang.Double"/>
+	<parameter name="net_value" class="java.lang.Double"/>
+	<parameter name="ItemsDataSource" class="net.sf.jasperreports.engine.data.JRResultSetDataSource"/>
+	<query language="SQL"><![CDATA[SELECT 
+    plr.receipt_id,
+    plr.customer_name,
+    plr.nic_number,
+    plr.phone_number,
+    plr.address,
+    plr.total_weight,
+    plr.total_amount,
+    plr.stamp_fees,
+    plr.current_interest,
+    plr.net_value,
+    
+    pld.item_name,
+    pld.weight,
+    pld.carat_of_gold,
+    pld.price,
+    pld.loan_months
+    
+FROM pawnLoanReceipt plr
+LEFT JOIN pawnloan_item_details pld 
+    ON plr.receipt_id = pld.loan_id
+
+WHERE plr.receipt_id = $P{receipt_id}]]></query>
+	<field name="item_name" class="java.lang.String"/>
+	<field name="weight" class="java.lang.Double"/>
+	<field name="carat_of_gold" class="java.lang.String"/>
+	<field name="price" class="java.lang.Double"/>
+	<field name="loan_months" class="java.lang.String"/>
+	<title height="120">
+		<element kind="staticText" uuid="4b20501e-c6bf-4000-8d53-9d5c0dce16c7" x="150" y="10" width="250" height="30" fontSize="22.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[JEWELRY SHOP]]></text>
+		</element>
+		<element kind="staticText" uuid="95ef3fae-dc83-440b-a7dd-923d5da4e2ec" x="180" y="45" width="200" height="25" fontSize="16.0" hTextAlign="Center">
+			<text><![CDATA[Pawn Loan Receipt]]></text>
+		</element>
+		<element kind="line" uuid="2e867c75-343e-4d02-b6b0-4466129c5c51" x="0" y="75" width="555" height="1"/>
+		<element kind="staticText" uuid="659adfce-0e68-4f95-873f-def19367c7cc" x="10" y="85" width="80" height="20" fontSize="12.0" bold="true">
+			<text><![CDATA[Receipt No:]]></text>
+		</element>
+		<element kind="textField" uuid="8aa14b99-66e1-4195-bb0c-869216cf414b" x="90" y="85" width="150" height="20" fontSize="12.0">
+			<expression><![CDATA[$P{receipt_id}]]></expression>
+		</element>
+		<element kind="staticText" uuid="0c6f1be3-5f1c-4dfe-958e-f8a2469c70c3" x="350" y="85" width="50" height="20" fontSize="12.0" bold="true">
+			<text><![CDATA[Date:]]></text>
+		</element>
+		<element kind="textField" uuid="eaebedc7-46b4-4f8d-b7a9-d65702c7df41" x="400" y="85" width="150" height="20" fontSize="12.0" pattern="yyyy-MM-dd">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+	</title>
+	<pageHeader height="150">
+		<element kind="staticText" uuid="2e34fc56-70c4-4409-8bf0-67a10827129e" x="10" y="10" width="200" height="20" fontSize="14.0" bold="true">
+			<text><![CDATA[Customer Details:]]></text>
+		</element>
+		<element kind="line" uuid="d1840577-0f5b-4196-bd02-7694d47f8864" x="0" y="35" width="555" height="1"/>
+		<element kind="staticText" uuid="8feecc46-2059-4567-bd36-6209c957b61f" x="10" y="45" width="80" height="20" fontSize="11.0" bold="true">
+			<text><![CDATA[Name:]]></text>
+		</element>
+		<element kind="textField" uuid="65900c31-51d9-404e-9b70-6aed8c3ea594" x="90" y="45" width="450" height="20" fontSize="11.0">
+			<expression><![CDATA[$P{customer_name}]]></expression>
+		</element>
+		<element kind="staticText" uuid="5b7c46fe-a9b0-4d8f-8a0c-8a718c5558eb" x="10" y="70" width="80" height="20" fontSize="11.0" bold="true">
+			<text><![CDATA[NIC:]]></text>
+		</element>
+		<element kind="textField" uuid="f21d0f4a-9bfd-4e1a-853c-8bbc839bc88f" x="90" y="70" width="200" height="20" fontSize="11.0">
+			<expression><![CDATA[$P{nic_number}]]></expression>
+		</element>
+		<element kind="staticText" uuid="a14500aa-f392-445d-a3f2-7a094b35e7fc" x="10" y="95" width="80" height="20" fontSize="11.0" bold="true">
+			<text><![CDATA[Phone:]]></text>
+		</element>
+		<element kind="textField" uuid="82da65d1-8c41-4963-b11d-27d990f153ef" x="90" y="95" width="200" height="20" fontSize="11.0">
+			<expression><![CDATA[$P{phone_number}]]></expression>
+		</element>
+		<element kind="staticText" uuid="b9f3dbad-07b3-42b8-83db-c9edae12b0eb" x="10" y="120" width="80" height="20" fontSize="11.0" bold="true">
+			<text><![CDATA[Address:]]></text>
+		</element>
+		<element kind="textField" uuid="5fc912c8-7f46-4bc2-b937-702c4a72462b" x="90" y="120" width="450" height="20" fontSize="11.0">
+			<expression><![CDATA[$P{address}]]></expression>
+		</element>
+	</pageHeader>
+	<columnHeader height="30">
+		<element kind="staticText" uuid="3dc73467-e7c2-4983-877f-8ff429851d15" mode="Opaque" x="10" y="5" width="150" height="20" backcolor="#E0E0E0" fontSize="10.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Item Name]]></text>
+			<box>
+				<pen lineWidth="0.5"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="fea5d1bb-f5b4-4936-81ee-0d2f8d2fceb1" mode="Opaque" x="160" y="5" width="80" height="20" backcolor="#E0E0E0" fontSize="10.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Weight (g)]]></text>
+			<box>
+				<pen lineWidth="0.5"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="b5de1139-3305-4ad7-92fe-f986ee13ca3a" mode="Opaque" x="240" y="5" width="80" height="20" backcolor="#E0E0E0" fontSize="10.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Carat]]></text>
+			<box>
+				<pen lineWidth="0.5"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="657db5f7-4ce3-4216-9e4d-e4cd980cb9c2" mode="Opaque" x="320" y="5" width="100" height="20" backcolor="#E0E0E0" fontSize="10.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Price (Rs.)]]></text>
+			<box>
+				<pen lineWidth="0.5"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="356170de-c02b-49c9-bdf9-6b4e45590146" mode="Opaque" x="420" y="5" width="120" height="20" backcolor="#E0E0E0" fontSize="10.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Duration]]></text>
+			<box>
+				<pen lineWidth="0.5"/>
+			</box>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="25">
+			<element kind="textField" uuid="70f72a32-1da3-4d58-83eb-e3aaff60b9a7" x="10" y="0" width="150" height="20" fontSize="9.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{item_name}]]></expression>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="992b3ca1-0b60-4190-9ffa-0796e1dce8fa" x="160" y="0" width="80" height="20" fontSize="9.0" pattern="#,##0.00" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{weight}]]></expression>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="17db3f34-6bb9-44c2-8311-cab02ba62442" x="240" y="0" width="80" height="20" fontSize="9.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{carat_of_gold}]]></expression>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="e33b4f85-279e-4a6b-abd1-5f42e15f4983" x="320" y="0" width="100" height="20" fontSize="9.0" pattern="#,##0.00" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{price}]]></expression>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="2668c37d-59d0-4eab-9621-ef18db71f865" x="420" y="0" width="120" height="20" fontSize="9.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{loan_months}]]></expression>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+	<summary height="180">
+		<element kind="line" uuid="a268a622-9473-449b-a311-bb6fb9c4cd58" x="0" y="10" width="555" height="1"/>
+		<element kind="staticText" uuid="d2050c4d-28e3-4c1d-8c61-d87a6b729047" x="300" y="20" width="150" height="20" fontSize="11.0" bold="true" hTextAlign="Right">
+			<text><![CDATA[Total Weight:]]></text>
+		</element>
+		<element kind="textField" uuid="3a6bab20-f1d9-4a58-b3be-5fc5af5c7762" x="455" y="20" width="100" height="20" fontSize="11.0" pattern="#,##0.00" hTextAlign="Right">
+			<expression><![CDATA[$P{total_weight} + " g"]]></expression>
+		</element>
+		<element kind="staticText" uuid="c666a7a6-fd9e-4c63-9747-b6e1a6f84c2c" x="300" y="45" width="150" height="20" fontSize="11.0" bold="true" hTextAlign="Right">
+			<text><![CDATA[Total Amount:]]></text>
+		</element>
+		<element kind="textField" uuid="1087df2a-b07a-4bb5-a3f5-a3c58ed313fc" x="455" y="45" width="100" height="20" fontSize="11.0" pattern="#,##0.00" hTextAlign="Right">
+			<expression><![CDATA["Rs. " + $P{total_amount}]]></expression>
+		</element>
+		<element kind="staticText" uuid="b2b33ef2-2cfb-4c56-b5f1-2810661f2ecf" x="300" y="70" width="150" height="20" fontSize="11.0" bold="true" hTextAlign="Right">
+			<text><![CDATA[Stamp Fees:]]></text>
+		</element>
+		<element kind="textField" uuid="157be1d9-2357-46fd-9a0f-fd86db1c259a" x="455" y="70" width="100" height="20" fontSize="11.0" pattern="#,##0.00" hTextAlign="Right">
+			<expression><![CDATA["Rs. " + $P{stamp_fees}]]></expression>
+		</element>
+		<element kind="staticText" uuid="6e1b163b-53ed-4a08-ab5c-86633eb341c6" x="300" y="95" width="150" height="20" fontSize="11.0" bold="true" hTextAlign="Right">
+			<text><![CDATA[Interest Rate:]]></text>
+		</element>
+		<element kind="textField" uuid="e1d53e81-fdb1-4352-a156-277334114b50" x="455" y="95" width="100" height="20" fontSize="11.0" pattern="#,##0.00" hTextAlign="Right">
+			<expression><![CDATA[$P{current_interest} + "%"]]></expression>
+		</element>
+		<element kind="line" uuid="4078a5cb-ce7e-42f9-8c1e-878bab70294c" x="300" y="120" width="255" height="1"/>
+		<element kind="staticText" uuid="7ea22f01-ae8f-4745-915f-d440bfb2d709" x="300" y="125" width="150" height="25" fontSize="14.0" bold="true" hTextAlign="Right">
+			<text><![CDATA[NET VALUE:]]></text>
+		</element>
+		<element kind="textField" uuid="4ac09a78-18f5-4d84-b92d-90fb40877511" x="455" y="125" width="100" height="25" fontSize="14.0" pattern="#,##0.00" bold="true" hTextAlign="Right">
+			<expression><![CDATA["Rs. " + $P{net_value}]]></expression>
+		</element>
+		<element kind="line" uuid="d779ff75-4d81-4924-b88f-522546d36948" x="300" y="155" width="255" height="1"/>
+		<element kind="staticText" uuid="09b42eae-77d7-47db-b12d-6ab7ba1d1bc8" x="150" y="160" width="250" height="15" fontSize="9.0" italic="true" hTextAlign="Center">
+			<text><![CDATA[Thank you for your business!]]></text>
+		</element>
+	</summary>
+</jasperReport>

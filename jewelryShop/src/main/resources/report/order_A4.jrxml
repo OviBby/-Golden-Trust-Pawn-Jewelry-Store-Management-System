@@ -1,0 +1,83 @@
+<jasperReport name="order_A4" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="810fc3b2-67e0-44d8-97a9-ab983a53b053">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JewelryShop"/>
+	<query language="SQL"><![CDATA[SELECT * FROM Orders]]></query>
+	<field name="item_id" class="java.lang.String"/>
+	<field name="receipt_no" class="java.lang.String"/>
+	<field name="qty" class="java.lang.Integer"/>
+	<field name="unit_price" class="java.math.BigDecimal"/>
+	<field name="subtotal" class="java.math.BigDecimal"/>
+	<field name="item_name" class="java.lang.String"/>
+	<field name="weight" class="java.math.BigDecimal"/>
+	<field name="customer_name" class="java.lang.String"/>
+	<field name="nic_number" class="java.lang.String"/>
+	<field name="order_date" class="java.sql.Date"/>
+	<variable name="Grand_Total" calculation="Sum" class="java.math.BigDecimal">
+		<expression><![CDATA[$F{subtotal}]]></expression>
+	</variable>
+	<title height="67">
+		<element kind="rectangle" uuid="c503d94f-96f3-4075-9341-5acfdcb70a52" x="0" y="-10" width="555" height="71" backcolor="#A7D4AF"/>
+		<element kind="staticText" uuid="12771db3-3d9f-4400-bc64-16bf4bf216c7" x="110" y="0" width="398" height="30" forecolor="#014017" fontName="Baskerville Old Face" fontSize="22.0" italic="true" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[W. P. RANASIHA (PVT) LTD]]></text>
+		</element>
+		<element kind="staticText" uuid="e5e9f07a-4367-4d84-810a-1d56e064b528" x="180" y="31" width="262" height="30" forecolor="#025C3C" fontName="Serif" fontSize="22.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Order Information]]></text>
+		</element>
+	</title>
+	<columnHeader height="45">
+		<element kind="rectangle" uuid="05ab0a66-7aa4-4ff4-9b25-e445d5c2cfaf" x="0" y="5" width="555" height="31" backcolor="#6ECC74"/>
+		<element kind="staticText" uuid="b77aaece-53a2-4153-888a-33fae11f170d" x="10" y="13" width="90" height="23" forecolor="#014017" fontName="Arial" fontSize="11.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Receipt No]]></text>
+		</element>
+		<element kind="staticText" uuid="cf7f39fb-21a1-4070-a5cb-03d913a69793" x="105" y="13" width="90" height="23" forecolor="#014017" fontName="Arial" fontSize="11.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Item ID]]></text>
+		</element>
+		<element kind="staticText" uuid="63a21b48-464f-434e-a774-6e9e4d70c2a2" x="200" y="13" width="90" height="23" forecolor="#014017" fontName="Arial" fontSize="11.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Qty]]></text>
+		</element>
+		<element kind="staticText" uuid="de8ed734-0f67-443c-bca5-e6a5db02c18a" x="295" y="13" width="120" height="23" forecolor="#014017" fontName="Arial" fontSize="11.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Unit Price]]></text>
+		</element>
+		<element kind="staticText" uuid="c2c631b5-919a-4bb0-b754-243c382f74ea" x="420" y="13" width="130" height="23" forecolor="#014017" fontName="Arial" fontSize="11.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Sub Total]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="35">
+			<element kind="textField" uuid="99d91755-b829-484f-a212-db68f8d74218" x="10" y="5" width="90" height="25" forecolor="#2C3E50" fontName="Arial" fontSize="10.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{receipt_no}]]></expression>
+			</element>
+			<element kind="textField" uuid="48b56965-993e-406c-a7bb-7b43fab4ff38" x="105" y="5" width="90" height="25" forecolor="#2C3E50" fontName="Arial" fontSize="10.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{item_id}]]></expression>
+			</element>
+			<element kind="textField" uuid="12466ba4-c95c-4142-81c2-6aab6104cda4" x="200" y="5" width="90" height="25" forecolor="#2C3E50" fontName="Arial" fontSize="10.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{qty}]]></expression>
+			</element>
+			<element kind="textField" uuid="49b302c6-20de-476f-90c6-e68209a41ba0" x="295" y="5" width="120" height="25" forecolor="#27AE60" fontName="Arial" fontSize="10.0" pattern="#,##0.00" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{unit_price}]]></expression>
+			</element>
+			<element kind="textField" uuid="95f706ac-583a-49bc-8dcf-4ef4ac972cdb" x="420" y="5" width="130" height="25" forecolor="#27AE60" fontName="Arial" fontSize="10.0" pattern="#,##0.00" bold="true" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{subtotal}]]></expression>
+			</element>
+			<element kind="line" uuid="6c4ef349-678c-44bd-ac0e-117ff96d8c4b" x="0" y="32" width="555" height="1">
+				<pen lineWidth="0.5" lineColor="#D5D8DC"/>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="80">
+		<element kind="rectangle" uuid="f6194b90-618c-4951-9fde-cb0a0212513a" x="0" y="5" width="555" height="45" backcolor="#E8F8F5"/>
+		<element kind="line" uuid="80d820ac-9f27-43cd-8c17-23ad716fd7ee" x="0" y="3" width="555" height="1">
+			<pen lineWidth="2.0" lineColor="#27AE60"/>
+		</element>
+		<element kind="staticText" uuid="f5cd8b28-8d36-4dab-bc7f-45eda1fc8b1d" x="295" y="15" width="120" height="30" forecolor="#014017" fontName="Arial" fontSize="14.0" bold="true" hTextAlign="Right" vTextAlign="Middle">
+			<text><![CDATA[Grand Total: Rs.]]></text>
+		</element>
+		<element kind="textField" uuid="c1901a57-1817-43f4-b19a-df9b3ff908f4" x="420" y="15" width="130" height="30" forecolor="#C0392B" fontName="Arial" fontSize="14.0" pattern="#,##0.00" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA[$V{Grand_Total}]]></expression>
+		</element>
+	</columnFooter>
+	<pageFooter height="54">
+		<element kind="staticText" uuid="e129ad40-d669-429a-bbf0-4e78666a1eaf" x="150" y="12" width="260" height="30" forecolor="#0B3605" fontName="Arial" fontSize="13.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[...... THIS IS ALL ORDERS ......]]></text>
+		</element>
+	</pageFooter>
+</jasperReport>

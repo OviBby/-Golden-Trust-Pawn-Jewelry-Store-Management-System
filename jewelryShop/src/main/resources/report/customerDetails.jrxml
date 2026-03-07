@@ -1,0 +1,113 @@
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="customerDetails" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="48a2a944-a47f-4aa3-b8eb-b5c3cf8f9794">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JewelryShop"/>
+	<query language="SQL"><![CDATA[SELECT * FROM Customer]]></query>
+	<field name="customer_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="customer_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Customer"/>
+	</field>
+	<field name="first_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="first_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="first_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Customer"/>
+	</field>
+	<field name="last_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="last_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="last_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Customer"/>
+	</field>
+	<field name="nic_number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nic_number"/>
+		<property name="com.jaspersoft.studio.field.label" value="nic_number"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Customer"/>
+	</field>
+	<field name="phone_number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="phone_number"/>
+		<property name="com.jaspersoft.studio.field.label" value="phone_number"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Customer"/>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="address"/>
+		<property name="com.jaspersoft.studio.field.label" value="address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Customer"/>
+	</field>
+	<field name="email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="email"/>
+		<property name="com.jaspersoft.studio.field.label" value="email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Customer"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="68" splitType="Stretch">
+		<element kind="rectangle" uuid="50890cbe-4c5b-44b3-8bbb-64d886f5b70f" x="0" y="-10" width="552" height="71" backcolor="#A7D4AF"/>
+		<element kind="staticText" uuid="4e689881-c3e2-46bd-898a-24e2d282523e" x="110" y="0" width="398" height="30" forecolor="#014017" fontName="Baskerville Old Face" fontSize="22.0" bold="true" italic="true">
+			<text><![CDATA[W. P. RANASIHA (PVT) LTD ]]></text>
+		</element>
+		<element kind="staticText" uuid="120c6e22-ad91-4c4b-85b0-799dd9089569" x="180" y="31" width="262" height="30" forecolor="#025C3C" fontName="Serif" fontSize="22.0" bold="false">
+			<text><![CDATA[Customer Information ]]></text>
+		</element>
+	</title>
+	<pageHeader splitType="Stretch"/>
+	<columnHeader height="50" splitType="Stretch">
+		<element kind="line" uuid="edeef007-be83-4cb3-a427-1af6391ebb8e" x="0" y="31" width="552" height="1"/>
+		<element kind="rectangle" uuid="5c2047fc-225f-4b8b-829a-2e5b42ae43e6" x="0" y="0" width="552" height="31" backcolor="#4AE068"/>
+		<element kind="staticText" uuid="c69fe6bf-ec59-46e6-b01b-61f3db7381ae" x="0" y="6" width="70" height="30" hTextAlign="Center">
+			<text><![CDATA[Customer ID]]></text>
+			<box>
+				<pen lineStyle="Solid"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="001fefca-a1c1-4b90-a6f3-2ab44c5f3a69" x="80" y="6" width="79" height="30" hTextAlign="Center">
+			<text><![CDATA[First Name]]></text>
+			<property name="com.jaspersoft.studio.unit.x" value="px"/>
+		</element>
+		<element kind="staticText" uuid="2681cb01-6dd3-41f5-9742-0a504fb63425" x="160" y="6" width="78" height="30" hTextAlign="Center">
+			<text><![CDATA[Last Name]]></text>
+		</element>
+		<element kind="staticText" uuid="a441ccb9-0a7c-4ffe-a82e-afd8fd5255bb" x="240" y="6" width="80" height="30" hTextAlign="Center">
+			<text><![CDATA[NIC]]></text>
+		</element>
+		<element kind="staticText" uuid="693d4326-0aa9-49d9-b29d-1d1a0f4a69bf" x="319" y="6" width="58" height="30" hTextAlign="Center">
+			<text><![CDATA[Adress]]></text>
+		</element>
+		<element kind="staticText" uuid="4fee9c32-ec21-4028-85b9-0bc01edc62d8" x="384" y="6" width="60" height="30" hTextAlign="Center">
+			<text><![CDATA[Phone ]]></text>
+		</element>
+		<element kind="staticText" uuid="fca37f53-20f9-4b8c-bbaf-7f3335d7bfe7" x="435" y="6" width="122" height="30" hTextAlign="Center">
+			<text><![CDATA[Email]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<element kind="textField" uuid="50535bb0-25b2-4aa0-8e5f-a15db2c9f1e2" x="0" y="0" width="70" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{customer_id}]]></expression>
+			</element>
+			<element kind="textField" uuid="9dd4369b-8dbc-4597-9b48-eb680707f864" x="71" y="0" width="80" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{first_name}]]></expression>
+			</element>
+			<element kind="textField" uuid="92b84039-8baf-4f39-92d5-670f15efa99e" x="151" y="0" width="78" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{last_name}]]></expression>
+			</element>
+			<element kind="textField" uuid="f3eb9899-2633-4b1b-aaae-584b6a9a8d18" x="228" y="0" width="82" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{nic_number}]]></expression>
+			</element>
+			<element kind="textField" uuid="3b84cce5-f51f-452d-8b66-c590b2f8cc24" x="370" y="0" width="68" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{phone_number}]]></expression>
+			</element>
+			<element kind="textField" uuid="5cda3d0e-e10b-44dc-a484-1a71bbd8cccb" x="310" y="0" width="60" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{address}]]></expression>
+			</element>
+			<element kind="textField" uuid="4ae05686-2e76-4d21-9d20-54140236b686" x="439" y="0" width="110" height="30" hTextAlign="Center">
+				<expression><![CDATA[$F{email}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch">
+		<element kind="staticText" uuid="c3a6a083-10d8-48be-ac53-cca171f9fbc9" x="184" y="11" width="230" height="30" fontSize="12.0" bold="true">
+			<text><![CDATA[.............THIS IS THE END.............]]></text>
+		</element>
+	</columnFooter>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

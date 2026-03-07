@@ -1,0 +1,41 @@
+/****** customer.css - Luxury Gold & Dark Green Theme ******/
+
+.root {
+    -fx-background-color: #0a2518;
+    -fx-font-family: "Segoe UI", "Helvetica", sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+    -fx-background-color: linear-gradient(to bottom, #0f3a28, #051910);
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+    -fx-padding: 10 15 10 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.9), 25, 0.5, 5, 10);
+}
+
+.sidebar-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #d0d0d0;
+    -fx-font-size: 20px;
+    -fx-alignment: CENTER;
+    -fx-padding: 12 20 12 20;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+}
+
+.sidebar-btn:hover {
+    -fx-background-color: rgba(203, 255, 191, 0.25);
+    -fx-text-fill: #e6ff04;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+.sidebar-btn:pressed {
+    -fx-background-color: rgba(17, 255, 0, 0.4);
+}
+
+
+
+
+

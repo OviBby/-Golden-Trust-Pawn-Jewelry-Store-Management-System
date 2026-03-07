@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="842.0" prefWidth="1542.0" stylesheets="@css/dashboard.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.jewelryshop.controller.DashboardController">
+
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+
+    <!-- Background Image -->
+    <ImageView fitHeight="821.0" fitWidth="1600.0" layoutX="-4.0" pickOnBounds="true">
+        <image>
+            <Image url="@../../../images/abstract-elegant-dark-green-background-with-golden-line-diagonal-and-lighting-effect-sparkle-luxury-template-design-free-vector.jpg" />
+        </image>
+    </ImageView>
+
+    <!-- Sidebar -->
+    <VBox fx:id="sidebar" layoutX="20" layoutY="90" opacity="0.61" prefHeight="580.0" prefWidth="200.0" spacing="8" styleClass="sidebar" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="90.0">
+        <padding><Insets left="15" right="15" /></padding>
+        <Button graphicTextGap="15" onAction="#dashbordOnAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: null;" text="Dashboard" textFill="#ecdede">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Button>
+        <Button graphicTextGap="15" onAction="#customerOnAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: null;" text="Customer" textFill="#ecdede">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Button>
+        <Button graphicTextGap="15" onAction="#orderOnAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: null;" text="Order" textFill="#ecdede">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Button>
+        <Button graphicTextGap="15" onAction="#jewelryItemOnAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: null;" text="Jewelry Item" textFill="#ecdede">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Button>
+        <Button graphicTextGap="15" onAction="#pawnLoanOnAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: null;" text="Pawn Loan" textFill="#ecdede">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Button>
+        <Button graphicTextGap="15" onAction="#pawnItemOnAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: null;" text="Pawn Release" textFill="#ecdede">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Button>
+        <Button graphicTextGap="15" onAction="#repairItemOnAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: null;" text="Repair Item" textFill="#ecdede">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Button>
+        <Button graphicTextGap="15" onAction="#repairDetailsOnAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: null;" text="Repair Details" textFill="#ecdede">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Button>
+        <Button disable="true" graphicTextGap="15" onAction="#purchaseOnAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: null;" text="Report" textFill="#ecdede">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Button>
+        <Button graphicTextGap="15"  prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: null;" text="Settings" textFill="#ecdede">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Button>
+    </VBox>
+
+    <!-- Header -->
+    <HBox alignment="CENTER_LEFT" spacing="20" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0">
+        <Label styleClass="header-title" text="Gold Pawn Loan System" />
+        <Region style="-fx-background-color: null;" HBox.hgrow="ALWAYS" />
+
+        <!-- User Info Label -->
+        <Label fx:id="userInfoLabel" text="Admin: User Name" textFill="#8efdb5">
+            <font>
+                <Font name="Arial Rounded MT Bold" size="14.0" />
+            </font>
+        </Label>
+
+        <Button mnemonicParsing="false" onAction="#logoutOnAction" prefHeight="32.0" prefWidth="172.0" style="-fx-border-radius: 30; -fx-background-color: #8efdb5; -fx-background-radius: 30;" text="LOG OUT" textFill="#286640">
+            <font>
+                <Font name="Arial Rounded MT Bold" size="12.0" />
+            </font>
+            <opaqueInsets>
+                <Insets right="30.0" />
+            </opaqueInsets>
+            <HBox.margin>
+                <Insets right="50.0" />
+            </HBox.margin>
+        </Button>
+    </HBox>
+
+    <!-- Info Cards -->
+    <HBox alignment="TOP_CENTER" spacing="25" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
+        <VBox prefWidth="280" styleClass="card">
+            <Label styleClass="card-title" text="Today's Revenue" />
+            <Label styleClass="card-amount" text="Rs. 124,000,000" textFill="#00ff04" />
+        </VBox>
+        <VBox prefWidth="180" styleClass="card">
+            <Label styleClass="card-title" text="Active Repairs" />
+            <Label styleClass="card-amount" text="23" textFill="#f5ff8a" />
+        </VBox>
+        <VBox prefWidth="280" styleClass="card">
+            <Label styleClass="card-title" text="Active Pawn Value" />
+            <Label styleClass="card-amount" text="Rs. 120,000,000" textFill="#77ffcf" />
+        </VBox>
+        <VBox prefWidth="180" styleClass="card">
+            <Label styleClass="card-title" text="Active Loans" />
+            <Label styleClass="card-amount" text="47" textFill="#d0cbf4" />
+        </VBox>
+    </HBox>
+
+    <!-- Charts Section -->
+    <GridPane hgap="30" layoutX="240" layoutY="240" vgap="20" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="230.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" percentWidth="33" />
+            <ColumnConstraints hgrow="SOMETIMES" percentWidth="33" />
+            <ColumnConstraints hgrow="SOMETIMES" percentWidth="33" />
+        </columnConstraints>
+
+        <!-- Gold Rate - Line Chart -->
+        <VBox spacing="8" styleClass="chart-container" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <Label styleClass="chart-title" text="Gold Rate Trend" textFill="#bce0ec">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Label>
+            <LineChart fx:id="goldRateChart" prefHeight="200" prefWidth="350" styleClass="line-chart">
+                <xAxis>
+                    <CategoryAxis side="BOTTOM" tickLabelFill="#bce0ec">
+                        <tickLabelFont>
+                            <Font size="10.0" />
+                        </tickLabelFont>
+                    </CategoryAxis>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis side="LEFT" tickLabelFill="#bce0ec">
+                        <tickLabelFont>
+                            <Font size="10.0" />
+                        </tickLabelFont>
+                    </NumberAxis>
+                </yAxis>
+            </LineChart>
+        </VBox>
+
+        <!-- Customer Distribution - Pie Chart -->
+        <VBox spacing="8" styleClass="chart-container" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Label styleClass="chart-title" text="Customer Distribution" textFill="#c7efdf">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Label>
+            <PieChart fx:id="customerPieChart" prefHeight="200" prefWidth="350" startAngle="90" styleClass="pie-chart" />
+        </VBox>
+
+        <!-- Monthly Revenue - Bar Chart -->
+        <VBox spacing="8" styleClass="chart-container" GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <Label styleClass="chart-title" text="Monthly Revenue" textFill="#f5ff8a">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Label>
+            <BarChart fx:id="monthlyRevenueChart" barGap="3" categoryGap="10" prefHeight="200" prefWidth="350" styleClass="bar-chart">
+                <xAxis>
+                    <CategoryAxis side="BOTTOM" tickLabelFill="#c7efdf">
+                        <tickLabelFont>
+                            <Font size="10.0" />
+                        </tickLabelFont>
+                    </CategoryAxis>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis side="LEFT" tickLabelFill="#c7efdf">
+                        <tickLabelFont>
+                            <Font size="10.0" />
+                        </tickLabelFont>
+                    </NumberAxis>
+                </yAxis>
+            </BarChart>
+        </VBox>
+
+        <rowConstraints>
+            <RowConstraints />
+        </rowConstraints>
+    </GridPane>
+
+    <!-- Repair Customer Table -->
+    <VBox spacing="10" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="500.0">
+        <Label styleClass="section-title" text="Recent Repair Customers" />
+        <TableView fx:id="repairItemList" styleClass="table-view">
+            <columns>
+                <TableColumn fx:id="colrepairid" prefWidth="187.20000302791595" text="ID" />
+                <TableColumn fx:id="colDate" prefWidth="127.19998168945312" text="Date" />
+                <TableColumn fx:id="colcustomername" prefWidth="172.79998779296875" text="Customer Name" />
+                <TableColumn fx:id="colcontact" prefWidth="114.39993286132812" text="Contact" />
+                <TableColumn fx:id="coltyp" prefWidth="83.20001220703125" text="Item" />
+                <TableColumn fx:id="colcon" prefWidth="109.60009765625" text="Condition" />
+                <TableColumn fx:id="coldes" prefWidth="200.0" text="Description" />
+                <TableColumn fx:id="colweight" prefWidth="100.0" text="Weight (g)" />
+                <TableColumn fx:id="colpayment" prefWidth="120" text="Payment" />
+            </columns>
+        </TableView>
+    </VBox>
+
+</AnchorPane>
